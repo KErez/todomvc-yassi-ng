@@ -1,0 +1,41 @@
+.buttons-ctrl {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.vcenter {
+  margin-top: 50%;
+}
+
+.tag-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 10px;
+  width: 200px;
+  & * .cell {
+    border: 1px solid;
+    margin: -1px;
+    padding: 2px 10px;
+    &:last-child {
+      border-left: 0px;
+    }
+  }
+}
+
+.labels-table {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  //padding: 5px;
+  &.header {
+    font-size: large;
+    font-weight: bold;
+    //padding-bottom: 10px;
+    border: 1px solid;
+  }
+  &.row {
+    border: 1px solid;
+    border-top-width: 0px;
+  }
+}
