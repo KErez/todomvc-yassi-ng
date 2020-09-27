@@ -7,6 +7,16 @@
   margin-top: 50%;
 }
 
+.svg-button {
+  fill: #cc9a9a;
+  &:hover {
+    fill: #cc009a;
+  }
+  &:active {
+    fill: #88339a;
+  }
+}
+
 .tag-list {
   position: absolute;
   left: 0;
