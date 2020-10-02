@@ -3,14 +3,10 @@
     <span class="cell">Label</span>
     <span class="cell">Count</span>
   </header>
-  <section>
+  <section *ngFor="let label of labels$ | async">
     <div class="labels-table row">
-      <span class="cell">label 1</span>
-      <span class="cell">3</span>
-    </div>
-    <div class="labels-table row">
-      <span class="cell">label 2</span>
-      <span class="cell">6</span>
+      <span class="cell">{{label[0]}}</span>
+      <span class="cell">{{label[1]}}</span>
     </div>
   </section>
 </section>

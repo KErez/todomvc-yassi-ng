@@ -107,3 +107,16 @@
 .todo-list li.editing:last-child {
   margin-bottom: -1px;
 }
+
+.label-container {
+  margin: 2px 0px;
+  padding: 10px 0px;
+  border-top: 1px solid;
+}
+
+.chip {
+  border-radius: 50%;
+  background-color: #af5b5e;
+  margin: 1px 5px;
+  padding: 5px;
+}

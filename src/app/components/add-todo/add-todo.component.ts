@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { yassi } from 'yassi';
 
 @Component({
   selector: 'yas-add-todo',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-todo.component.scss'],
 })
 export class AddTodoComponent implements OnInit {
+  addTodoControl: FormControl = new FormControl(null);
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
+  enterPressed(): void {
+    yassi.communicate('itemList', 'addItem', [this.addTodoControl.value]);
+    this.addTodoControl.reset();
+  }
 }

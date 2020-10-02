@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoMainComponent } from './components/todo-main/todo-main.component';
 import { TodoCountComponent } from './components/todo-count/todo-count.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TodoCountComponent } from './components/todo-count/todo-count.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
