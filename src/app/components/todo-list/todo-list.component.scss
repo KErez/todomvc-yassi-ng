@@ -84,6 +84,7 @@
   margin: 5px;
   font-size: 30px;
   color: #cc9a9a;
+  fill: #cc9a9a;
   margin-bottom: 11px;
   transition: color 0.2s ease-out;
 }
@@ -116,7 +117,8 @@
 
 .chip {
   border-radius: 50%;
-  background-color: #af5b5e;
-  margin: 1px 5px;
-  padding: 5px;
+  background-color: #ea131b;
+  margin: 0px 5px;
+  padding: 1px 15px;
+  color: #fdfcfc;
 }

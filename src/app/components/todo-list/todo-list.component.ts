@@ -34,6 +34,18 @@ export class TodoListComponent implements AfterViewInit {
     this.itemList.push(item);
   }
 
+  removeItem(item: Item) {
+    this.itemList = this.itemList.filter((it) => it !== item);
+  }
+
+  toggleItemActivation(item: Item) {
+    if (item.active) {
+      item.active = false;
+    } else {
+      item.active = true;
+    }
+  }
+
   parse(payload: string) {
     const tokenized = payload.split(/\b\s+/);
     const subject = tokenized.filter((token) => !token.startsWith('#')).join(' ');
