@@ -10,6 +10,7 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoMainComponent } from './components/todo-main/todo-main.component';
 import { TodoCountComponent } from './components/todo-count/todo-count.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DataFilteringPipe } from './services/data-filtering.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     TodoListComponent,
     TodoMainComponent,
     TodoCountComponent,
+    DataFilteringPipe,
   ],
   imports: [
     BrowserModule,

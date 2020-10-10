@@ -1,6 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Item } from '../../models/Item.interface';
-import { yassi, yassit } from 'yassi';
+import { endpoint, select, yassi, yassit } from 'yassi';
 
 @Component({
   selector: 'yas-todo-list',
@@ -11,6 +11,9 @@ export class TodoListComponent implements AfterViewInit {
 
   @yassit('itemList')
   itemList: Item[] = [];
+
+  @select('selectedFilter')
+  todoItemStateFilter: string;
 
   constructor() {
   }
@@ -31,11 +34,18 @@ export class TodoListComponent implements AfterViewInit {
       createdAt: Date.now(),
       labels: tags,
     };
-    this.itemList.push(item);
+    this.itemList = this.itemList.concat(item);
   }
 
   removeItem(item: Item) {
     this.itemList = this.itemList.filter((it) => it !== item);
+  }
+
+  @endpoint()
+  clearCompleted() {
+    for (const item of this.itemList) {
+      item.active = true;
+    }
   }
 
   toggleItemActivation(item: Item) {
@@ -52,5 +62,26 @@ export class TodoListComponent implements AfterViewInit {
     const tags = tokenized.filter((token) => token.startsWith('#'))
       .map((t) => t.replace('#', ''));
     return {subject, tags};
+  }
+
+  buildFilterDataStructure(argument: string, condition: string = 'ALL') {
+    let filteringFn: any;
+
+    switch (condition) {
+      case 'ACTIVE':
+        filteringFn = (element: any) => !!element[argument];
+        break;
+      case 'COMPLETED':
+        filteringFn = (element: any) => !element[argument];
+        break;
+      default:
+        filteringFn = (element: any) => element[argument] != null;
+        break;
+    }
+
+    return {
+      targetArg: argument,
+      filteringFn: filteringFn,
+    };
   }
 }

@@ -20,3 +20,33 @@
   0 16px 0 -6px #f6f6f6,
   0 17px 2px -6px rgba(0, 0, 0, 0.2);
 }
+
+.filters {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.filters li {
+  display: inline;
+}
+
+.filters li span {
+  color: inherit;
+  margin: 3px;
+  padding: 3px 7px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+
+.filters li span:hover {
+  border-color: rgba(175, 47, 47, 0.1);
+}
+
+.filters li span.selected {
+  border-color: rgba(175, 47, 47, 0.2);
+}

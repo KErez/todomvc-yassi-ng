@@ -1,5 +1,5 @@
 <ul class="todo-list">
-  <li *ngFor="let item of itemList" [ngClass]="{completed: !item.active}">
+  <li *ngFor="let item of itemList | yasDataFilter: buildFilterDataStructure('active', todoItemStateFilter)" [ngClass]="{completed: !item.active}">
     <div class="view">
       <input class="toggle" type="checkbox" [checked]="false" (click)="toggleItemActivation(item)">
       <label>{{item.subject}}</label>
