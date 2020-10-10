@@ -1,6 +1,10 @@
-# TodomvcYassiNg
+# Todo MVC for Yassi with Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
+This repository is a full example of the famous [Todo MVC](http://todomvc.com/) to demonstrate [Yassi](https://github.com/KErez/yassi) store usage with some small additions.  
+The additions for this Todo MVC example is that it support labeling the different tasks and show a table of labels count on the top left corner.  
+This addition was made mainly to demonstrate the power of _**facades**_ in **_Yassi_**
+
+For more information please refer to [Yassi home page on github](https://github.com/KErez/yassi)
 
 ## Development server
 
