@@ -3,7 +3,7 @@
     <span class="cell">Label</span>
     <span class="cell">Count</span>
   </header>
-  <section *ngFor="let label of labels$ | async">
+  <section *ngFor="let label of labelListComponentModel.labels$ | async">
     <div class="labels-table row">
       <span class="cell">{{label[0]}}</span>
       <span class="cell">{{label[1]}}</span>

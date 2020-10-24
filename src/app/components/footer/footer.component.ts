@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { yassi, yassit } from 'yassi';
+import { yassi } from 'yassi';
+import { FooterComponentModel } from './footer-component.model';
 
 @Component({
   selector: 'yas-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
+  providers: [FooterComponentModel],
 })
 export class FooterComponent implements OnInit {
-
-  @yassit('selectedFilter')
-  selected = 'ALL';
-
-  constructor() { }
+  constructor(public footerModel: FooterComponentModel) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +19,6 @@ export class FooterComponent implements OnInit {
   }
 
   filterSelected(filter: string) {
-    this.selected = filter;
+    this.footerModel.selected = filter;
   }
 }

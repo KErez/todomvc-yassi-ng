@@ -2,13 +2,13 @@
   <yas-todo-count></yas-todo-count>
   <ul class="filters">
     <li>
-      <span [ngClass]="{selected: selected==='ALL'}" (click)="filterSelected('ALL')" >All</span>
+      <span [ngClass]="{selected: footerModel.selected==='ALL'}" (click)="filterSelected('ALL')" >All</span>
     </li>
     <li>
-      <span [ngClass]="{selected: selected==='ACTIVE'}" (click)="filterSelected('ACTIVE')" >Active</span>
+      <span [ngClass]="{selected: footerModel.selected==='ACTIVE'}" (click)="filterSelected('ACTIVE')" >Active</span>
     </li>
     <li>
-      <span [ngClass]="{selected: selected==='COMPLETED'}" (click)="filterSelected('COMPLETED')" >Completed</span>
+      <span [ngClass]="{selected: footerModel.selected==='COMPLETED'}" (click)="filterSelected('COMPLETED')" >Completed</span>
     </li>
   </ul>
   <button class="clear-completed" (click)="clearCompleted()">Clear completed</button>

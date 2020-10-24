@@ -39,13 +39,14 @@ export class TodoListComponent implements AfterViewInit {
 
   removeItem(item: Item) {
     this.itemList = this.itemList.filter((it) => it !== item);
+    if (this.itemList.length === 0) {
+      yassi.republish('itemList');
+    }
   }
 
   @endpoint()
   clearCompleted() {
-    for (const item of this.itemList) {
-      item.active = true;
-    }
+    this.itemList = this.itemList.filter((item) => item.active);
   }
 
   toggleItemActivation(item: Item) {
@@ -54,6 +55,7 @@ export class TodoListComponent implements AfterViewInit {
     } else {
       item.active = true;
     }
+    yassi.republish('itemList');
   }
 
   parse(payload: string) {
